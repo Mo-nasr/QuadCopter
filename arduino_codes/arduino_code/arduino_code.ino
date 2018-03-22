@@ -11,7 +11,7 @@ const int battery_vb=A7;
 const int trigPin = 12;
 const int echoPin = 13;
 float data[4];
-float motor[4];
+//byte motor[4];
 int z=0;
 int d=0;
 long duration;
@@ -74,7 +74,15 @@ void receiveEvent(int howMany) {
         z=0;
       }
   }
-  
+ //z=0 ;
+ //while (Wire.available()>0){
+ //motor[z]=Wire.read(); //define motor[] first foo2
+ //z++;  
+ //} 
+ //motor_1.writeMicroseconds(map(motor[0],0,255,700,2300));
+ //motor_2.writeMicroseconds(map(motor[1],0,255,700,2300));
+ //motor_3.writeMicroseconds(map(motor[2],0,255,700,2300));
+ //motor_4.writeMicroseconds(map(motor[3],0,255,700,2300));
 }
 float getdistance(){
 digitalWrite(trigPin, LOW);
