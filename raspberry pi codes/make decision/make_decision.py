@@ -48,16 +48,16 @@ class make_decision:
 		if msg.current_1 > 16: ##the current limit
 			self.current = 1
 			self.status_pub.publish('WARNING: The current in motor 1 over 16 Amps ')
-		if msg.current_2 > 16:
+		if msg.current_2 > 16: #elif
 			self.current = 1
 			self.status_pub.publish('WARNING: The current in motor 2 over 16 Amps ')
-		if msg.current_3 > 16:
+		if msg.current_3 > 16: #elif
 			self.current = 1
 			self.status_pub.publish('WARNING: The current in motor 3 over 16 Amps ')
-		if msg.current_4 > 16:
+		if msg.current_4 > 16: #elif
 			self.current = 1
 			self.status_pub.publish('WARNING: The current in motor 4 over 16 Amps ')
-		if msg.battery < 20:
+		if msg.battery < 20: #elif
 			self.battry=1
 			self.status_pub.publish('WARNING: The battery is lower than 20 %')
 		if self.current_flag == 0 and self.battry == 0:
@@ -103,6 +103,7 @@ class make_decision:
         self.bus.write_byte(self.address, msg.motor_2)
         self.bus.write_byte(self.address, msg.motor_3)
         self.bus.write_byte(self.address, msg.motor_4)
+	#bus.write_i2c_block_data(self.address, self.motor_1, [self.motor_2, self.motor_3, self.motor_4])
 
 
 
